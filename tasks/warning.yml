@@ -1,0 +1,32 @@
+# Warns the user of the seriousness of what this role will do to their server.
+---
+- block :
+
+    - block :
+
+      - name   : Warning Prompt
+        prompt :
+          msg :
+            - say : ""
+            - say : "{{ server_harden.warning.message }}"
+            - say : ""
+            - say : "Do you wish to continue? [yN]"
+              ask : server_hardening_continue
+
+      - meta : end_play
+        when : "server_hardening_continue|upper != 'Y'"
+
+      when : server_harden.warning.prompt
+
+    - block :
+
+      - name   : Warning Message
+        prompt :
+          msg :
+            - say : ""
+            - say : "{{ server_harden.warning.message }}"
+            - say : ""
+
+      when : not server_harden.warning.prompt
+
+  when : server_harden.warning != false

@@ -46,7 +46,34 @@ vars:
     config_option: # ... <-- see below
 ```
 
-These variables will be added to this section as they are made available.
+As many or as few options can be overridden.  A complete structure of what can be overridden can be found in the
+[defaults file][var-defaults].
+
+### Warning
+
+By default, a warning prompt is presented to start ensuring the user wants to continue.  The functionality of this
+can be managed with the `warning` object:
+
+```yaml
+vars:
+  server_harden:
+
+    warning:
+      prompt  : true
+      message : >
+        Write your custom message here.
+```
+
+To disable the warning entirely, simply set `warning: false`.
+
+#### `prompt`
+
+If set to `true`, the default option, an input will be required from the user to continue before the server hardening
+begins.  If set to `false`, it will be skipped entirely.
+
+#### `message`
+
+Allows you to override the message that is presented to the user.
 
 ## Contributing
 
@@ -106,6 +133,8 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 [github-contribute]: https://github.com/andrewvaughan/ansible-role-server-harden/blob/master/CONTRIBUTING.md
 [github-issue]:      https://github.com/andrewvaughan/ansible-role-server-harden/issues
 [github-release]:    https://github.com/andrewvaughan/ansible-role-server-harden/releases
+
+[var-defaults]:      https://github.com/andrewvaughan/ansible-role-server-harden/blob/master/defaults/main.yml
 
 [ansible]:           https://www.ansible.com/
 [ansible-galaxy]:    https://galaxy.ansible.com/

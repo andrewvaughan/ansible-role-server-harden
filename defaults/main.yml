@@ -1,0 +1,12 @@
+# Default values for configuring the Server Harden role.
+#
+# Do not modify this file.  Instead, override these by setting a `server_harden` variable in your playbook.
+---
+server_harden_defaults:
+
+  warning:
+    prompt  : true
+    message : >
+      WARNING!  The server-harden role is intended to be used to secure servers. It has the potential to cause
+      irreparable harm to the target system, including access lockout and data loss.  It is vital that you understand
+      the full context of this role before continuing execution.
