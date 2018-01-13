@@ -1,0 +1,52 @@
+---
+galaxy_info :
+  author      : Andrew Vaughan
+  description : Ansible role that hardens servers in accordance with Andrew Vaughan's standards.
+  license     : MIT
+
+  github_branch       : release
+  min_ansible_version : 2.0
+
+  platforms :
+    - name     : EL
+      versions :
+      - all
+    - name     : GenericUNIX
+      versions :
+      - all
+    - name     : Fedora
+      versions :
+      - all
+    - name     : opensuse
+      versions :
+      - all
+    - name     : Amazon
+      versions :
+      - all
+    - name     : GenericBSD
+      versions :
+      - all
+    - name     : FreeBSD
+      versions :
+      - all
+    - name     : Ubuntu
+      versions :
+      - all
+    - name     : SLES
+      versions :
+      - all
+    - name     : GenericLinux
+      versions :
+      - all
+    - name     : Debian
+      versions :
+      - all
+
+  galaxy_tags :
+    - system
+    - security
+    - performance
+
+dependencies : [
+  "andrewvaughan.prompt"
+]

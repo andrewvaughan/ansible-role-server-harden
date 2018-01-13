@@ -1,0 +1,9 @@
+# Runs the Server Harden role routine.
+---
+
+# Override our defaults with any settings from the playbook
+- name : Loading server_harden Overrides
+  set_fact:
+    server_harden: "{{ server_harden_defaults|combine(server_harden, recursive=True) }}"
+
+- import_tasks : warning.yml
