@@ -7,3 +7,5 @@
     server_harden: "{{ server_harden_defaults|combine(server_harden, recursive=True) }}"
 
 - import_tasks : warning.yml
+
+- import_tasks : root.yml

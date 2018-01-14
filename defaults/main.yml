@@ -4,9 +4,15 @@
 ---
 server_harden_defaults:
 
+  # Configuration for the warning prompt
   warning:
     prompt  : true
     message : >
       WARNING!  The server-harden role is intended to be used to secure servers. It has the potential to cause
       irreparable harm to the target system, including access lockout and data loss.  It is vital that you understand
       the full context of this role before continuing execution.
+
+  # Configuration for the root account
+  root:
+    password :
+    ssh_keys : false

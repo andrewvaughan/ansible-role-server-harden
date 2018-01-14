@@ -1,0 +1,19 @@
+# Secures the root account on the server.
+---
+- block :
+
+  - block :
+
+    - block :
+
+      - name     : Generating Root Password
+        set_fact :
+          server_harden_password : "{{ lookup('password', '/dev/null length=15 chars=ascii_letters,digits,punctuation') }}"
+
+      - debug : msg=server_harden_password
+
+      when : server_harden.root.password is undefined
+
+    when : server_harden.root.password
+
+  when : server_harden.root != false
