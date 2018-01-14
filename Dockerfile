@@ -18,6 +18,8 @@ RUN apt-get -y update && \
 
 RUN apt-get -y install ansible
 
+ENV ANSIBLE_FORCE_COLOR=true
+
 # Setup and run the test
 RUN mkdir /opt/test
 COPY . /opt/test/

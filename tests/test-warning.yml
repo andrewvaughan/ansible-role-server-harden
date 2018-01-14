@@ -1,12 +1,13 @@
 ---
-- name         : Server Harden Test Suite
+- name         : Server Harden Test Suite - Warnings
   hosts        : localhost
   gather_facts : false
 
   vars:
     server_harden:
       warning:
-        prompt : false
+        message : "This should be a custom message.  No prompt should appear."
+        prompt  : false
 
   roles:
     - server-harden

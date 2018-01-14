@@ -1,0 +1,10 @@
+---
+- name         : Server Harden Test Suite - Defaults
+  hosts        : localhost
+  gather_facts : false
+
+  vars:
+    server_harden:
+
+  roles:
+    - server-harden
